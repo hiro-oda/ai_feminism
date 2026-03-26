@@ -1,0 +1,8 @@
+[preload  storage="./data/bgimage/room_afternoon.png"  ]
+[preload  storage="./data/bgimage/rouka_afternoon.png"  ]
+[preload  storage="./data/bgimage/library_afternoon.png"  ]
+[preload  storage="./data/fgimage/chara/3/renai_middle_soup.png"  ]
+[preload  storage="./data/fgimage/chara/3/renai_middle_soup_wink.png"  ]
+[preload  storage="./data/bgimage/library_anketo.png"  ]
+[preload  storage="./data/bgimage/anketo.png"  ]
+[return]

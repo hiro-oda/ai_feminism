@@ -1,0 +1,8 @@
+[preload  storage="./data/bgimage/street_in_spring.jpg"  ]
+[preload  storage="./data/bgimage/train_morning2.png"  ]
+[preload  storage="./data/bgimage/train_morning_quitter2.png"  ]
+[preload  storage="./data/bgimage/train_morning.png"  ]
+[preload  storage="./data/fgimage/chara/1/fuemi_noface_haikeitouka.png"  ]
+[preload  storage="./data/bgimage/womensign3.png"  ]
+[preload  storage="./data/fgimage/chara/1/aino_basic_middle_doki.png"  ]
+[return]

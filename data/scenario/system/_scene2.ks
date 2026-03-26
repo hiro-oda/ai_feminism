@@ -1,0 +1,7 @@
+[preload  storage="./data/bgimage/room2.jpg"  ]
+[preload  storage="./data/bgimage/rouka.png"  ]
+[preload  storage="./data/fgimage/chara/2/kaburi_middle_basic_silhouette2.png"  ]
+[preload  storage="./data/fgimage/chara/2/kaburi_middle_kage_fronteye.png"  ]
+[preload  storage="./data/fgimage/chara/2/kaburi_middle_kage_re.png"  ]
+[preload  storage="./data/fgimage/chara/2/kaburi_middle_basic_re.png"  ]
+[return]

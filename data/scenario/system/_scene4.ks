@@ -1,0 +1,8 @@
+[preload  storage="./data/bgimage/学校の屋上（夕方）.jpg"  ]
+[preload  storage="./data/fgimage/chara/1/aino_new.png"  ]
+[preload  storage="./data/fgimage/chara/1/aino_basic_middle_doki.png"  ]
+[preload  storage="./data/fgimage/chara/3/renai_middle_wink.png"  ]
+[preload  storage="./data/fgimage/chara/2/kaburi_middle_basic_re.png"  ]
+[preload  storage="./data/fgimage/chara/3/renai_middle_soup.png"  ]
+[preload  storage="./data/bgimage/aifemislide3.png"  ]
+[return]
