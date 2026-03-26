@@ -2,79 +2,44 @@
 
 *start
 
-
 ;-----------------------------------------------------------
-; 環境変数(.env) 読み込み処理
+; 環境変数(Vercel API) 読み込み処理
 ;-----------------------------------------------------------
-
 
 [iscript]
 f.env_loaded = false;
 f.api_key = "";
 f.system_prompt_text = "";
-fetch("env")
+
+// VercelのAPIルートから環境変数を取得する
+fetch("/api/env")
 .then(response => {
-if (!response.ok) throw new Error("env file not found");
-return response.text();
+  if (!response.ok) throw new Error("Vercel API route not found");
+  return response.json(); // テキストではなくJSONとしてパース
 })
-.then(text => {
-// --- 高機能パース処理 ---
-// 1. まず行末の「\」を処理して、物理的な複数行を1行に結合する
-const rawLines = text.split(/\r?\n/);
-const mergedLines = [];
-let buffer = "";
-rawLines.forEach(line => {
-let trimmed = line.trim(); // 前後の空白を除去
-if (trimmed.endsWith("\\")) {
-// 末尾が \ なら、\を取り除いてバッファに溜める（次の行とつなげる）
-buffer += trimmed.slice(0, -1);
-} else {
-// \ で終わらないなら、バッファと結合して確定させる
-buffer += trimmed;
-mergedLines.push(buffer);
-buffer = "";
-}
-});
-// 残りがあれば追加
-if (buffer) mergedLines.push(buffer);
-// 2. 結合された行ごとの解析
-mergedLines.forEach(line => {
-// 空行やコメント(#)をスキップ
-if (!line || line.startsWith("#")) return;
-// KEY="VALUE" または KEY=VALUE の形式を抽出
-const match = line.match(/^([^=]+)=(.*)$/);
-if (match) {
-const key = match[1].trim();
-let val = match[2].trim();
-// ダブルクォーテーションで囲まれている場合、中身を取り出す
-if (val.startsWith('"') && val.endsWith('"')) {
-val = val.slice(1, -1);
-// 文字列としての "\n" を実際の改行コードに変換
-val = val.replace(/\\n/g, "\n");
-}
-if (key === "GROK_API_KEY") f.api_key = val;
-if (key === "FUEMI_SYSTEM_PROMPT") f.system_prompt_text = val;
-}
-});
-f.env_loaded = true;
-console.log("Environment variables loaded.");
+.then(data => {
+  // JSONから値を取得
+  f.api_key = data.GROK_API_KEY || "";
+  let promptText = data.FUEMI_SYSTEM_PROMPT || "";
+
+  // 文字列としての "\n" を実際の改行コードに変換
+  f.system_prompt_text = promptText.replace(/\\n/g, "\n");
+
+  f.env_loaded = true;
+  console.log("Environment variables loaded from Vercel.");
 })
 .catch(err => {
-console.error("Failed to load .env:", err);
-alert(".envファイルの読み込みに失敗しました。");
+  console.error("Failed to load Vercel env:", err);
+  alert("環境変数の読み込みに失敗しました。");
 });
 [endscript]
 
-
 ; 読み込み完了待ちループ
 
-
 *load_env_wait
-
-[wait  time="100"  ]
+[wait time="100"]
 [if exp="f.env_loaded == false"]
-
-[jump  target="*load_env_wait"  storage=""  ]
+  [jump target="*load_env_wait" storage=""]
 [endif]
 
 
