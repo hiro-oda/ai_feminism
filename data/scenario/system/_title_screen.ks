@@ -1,2 +1,2 @@
-[preload  storage="./data/fgimage/default/aifemilogo_アートボード-1.png"  ]
+[preload  storage="./data/fgimage/default/title.png"  ]
 [return]

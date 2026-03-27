@@ -23,7 +23,7 @@
 
 
 [bgmovie  time="1000"  volume="0"  loop="true"  storage="title_animation.mp4"  ]
-[tb_image_show  time="1500"  storage="default/aifemilogo_アートボード-1.png"  width="688"  height="119"  x="58"  y="38"  _clickable_img=""  name="img_9"  ]
+[tb_image_show  time="1500"  storage="default/title.png"  width="840"  height="148"  x="114"  y="19"  _clickable_img=""  name="img_9"  ]
 *title
 
 [glink  color="ts13"  text="はじめから"  x="60"  y="450"  size="20"  target="*start"  width="150"  height="20"  _clickable_img=""  ]
