@@ -50,12 +50,10 @@ fetch("/api/env")
 
 
 [iscript]
-// 会話履歴の初期化
-if(!f.messages) {
+// 会話履歴の初期化（毎回必ずリセットする）
 f.messages = [
-{role: "system", content: f.system_prompt_text}
+  {role: "system", content: f.system_prompt_text}
 ];
-}
 f.user_input = "";
 f.ai_response = "";
 f.is_loading = false;
