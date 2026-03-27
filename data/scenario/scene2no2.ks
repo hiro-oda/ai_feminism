@@ -41,7 +41,7 @@
 
 [glink  color="ts13"  storage="scene2no2.ks"  size="20"  text="他の教室を回ってみる"  target="*l4"  width="300"  y="233"  x="486"  height=""  _clickable_img=""  ]
 [glink  color="ts13"  storage="scene2no2.ks"  size="20"  text="静かな図書館へ行く"  target="*l5"  width="300"  y="325"  ]
-[glink  color="ts13"  storage="scene2.ks"  size="20"  text="屋上に行ってみる"  target="*l6"  width="300"  y="425"  ]
+[glink  color="ts13"  storage="scene2no2.ks"  size="20"  text="屋上に行ってみる"  target="*l6"  width="300"  y="425"  ]
 [s  ]
 *l4
 
